@@ -6,6 +6,9 @@ export default class ApplicationAdapter extends JSONAPIAdapter {
   // @service session;
   //
   headers = {
+    'Content-Type': 'application/json',
+    'Accept': 'application/json'
+
     // 'Access-Control-Allow-Origin': '*'
     // secret_token: this.session.data.authenticated.token
   }
