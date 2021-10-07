@@ -10,4 +10,5 @@ Router.map(function () {
   this.route('login');
   this.route('dogs');
   this.route('profile');
+  this.route('activities');
 });
