@@ -6,7 +6,7 @@ module.exports = function (environment) {
     environment,
     rootURL: '/',
     locationType: 'auto',
-    apiHost: "127.0.0.1:8000",
+    apiHost: "localhost:8000",
 
     EmberENV: {
       FEATURES: {
@@ -26,6 +26,10 @@ module.exports = function (environment) {
   };
 
   if (environment === 'development') {
+    ENV.contentSecurityPolicy = {
+      // ... other stuff here
+      'connect-src': "'self' http://localhost:8000"
+    }
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
