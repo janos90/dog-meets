@@ -1,2 +1,25 @@
 {{page-title "Activities"}}
-{{outlet}}
+<h1>Activities</h1>
+<hr />
+<div class="activity-card-box">
+  {{#each model as |activity|}}
+    <div class="activity-card">
+      <div class="activity-image-box">
+        <img class='activity-image' src={{activity.image}} />
+      </div>
+      <div class="activity-stats">
+        <header >
+          <h3 class="activity-header">{{activity.name}}</h3>
+        </header>
+        <body>
+          <ul>
+            <li>location: {{activity.location}}</li>
+            <li>Start time: {{activity.startTime}}</li>
+            <li>dogs: {{activity.dogs.length}}</li>
+            <li>participants: {{activity.participants.length}}</li>
+          </ul>
+        </body>
+      </div>
+    </div>
+  {{/each}}
+</div>

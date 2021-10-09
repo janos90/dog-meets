@@ -1,0 +1,22 @@
+.dog-card-box {
+  display: flex;
+}
+.dog-card {
+ background-color: #DECAFE;
+ border-radius: 5px;
+ display: flex;
+ margin: 5px;
+ padding: 10px;
+}
+.dog-image-box {
+}
+.dog-image {
+  max-width: 200px;
+  max-height: 200px;
+}
+.dog-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
+}

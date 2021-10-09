@@ -1,5 +1,26 @@
 {{page-title "Dogs"}}
-
-{{#each model as |dog|}}
-  <h1>{{dog.name}}</h1>
-{{/each}}
+<h1>Dogs</h1>
+<hr />
+<div class="dog-card-box">
+  {{#each model as |dog|}}
+    <a class="dog-card" href="/dog/{{dog.id}}">
+      <div class="dog-image-box">
+        <img class='dog-image' src={{dog.image}} />
+      </div>
+      <div class="dog-stats">
+        <header >
+          <h3 class="dog-header">{{dog.name}}</h3>
+        </header>
+        <body>
+          <ul>
+            <li>Breed: {{dog.breed}}</li>
+            <li>Birthday: {{dog.birthday}}</li>
+            <li>Owner: {{dog.owner}}</li>
+            <li>Owneruser: {{dog.owner.user}}</li>
+            <li>Ownerfirst_name: {{dog.owner.user.first_name}}</li>
+          </ul>
+        </body>
+      </div>
+    </a>
+  {{/each}}
+</div>

@@ -11,4 +11,6 @@ Router.map(function () {
   this.route('dogs');
   this.route('profile');
   this.route('activities');
+  this.route('activity', { path: 'activity/:activity_id' });
+  this.route('dog', { path: 'dog/:dog_id' });
 });
