@@ -1,0 +1,30 @@
+<div class="outlet-wraper">
+  <header class="nav-bar">
+    {{#if this.session.isAuthenticated}}
+      <LinkTo @route='login' class='nav-bar-links'{{on "click" this.invalidateSession}}>Logout</LinkTo>
+    {{else}}
+      <LinkTo @route='login'class='nav-bar-links'>Log in</LinkTo>
+    {{/if}}
+    <LinkTo @route='authenticated.activities' class='nav-bar-links'>Activities</LinkTo>
+    <LinkTo @route='authenticated.dogs'class='nav-bar-links'>Dogs</LinkTo>
+    <LinkTo @route='authenticated.profile'class='nav-bar-links'>Profile</LinkTo>
+    {{#if (eq this.userRole 'admin')}}
+      <LinkTo @route='authenticated.admintoolbox'class='nav-bar-links'>Toolbox test</LinkTo>
+    {{/if}}
+  </header>
+  <div class="auth-wrapper">
+    {{outlet}}
+  </div>
+  <footer class="contact-footer">
+    <input type="image" class="toTop-icon" id="toTop" onclick="topFunction()" src="../images/Icons/up-arrow.png">
+    <LinkTo @route='support' class='contact-footer-link'>Contact us</LinkTo>
+  </footer>
+</div>
+<script>
+  var mybutton = document.getElementById("toTop");
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+</script>

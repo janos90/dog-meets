@@ -1,2 +1,27 @@
 {{page-title "Login"}}
-{{outlet}}
+<form class="login-form form" {{on "submit" this.authenticate}}>
+  <header class="login header">
+    <img class="logo main login image centered" src="../images/pikiToiLogo.svg" />
+  </header>
+  <body class="login form-body body fadeIn-Animation">
+    <div class="form-row">
+      <input class="text-box centered" autocomplete="username" placeholder="Enter Username" type="text" value={{this.identification}} {{on "change" this.updateIdentification}}>
+    </div>
+    <div class="form-row">
+      <input class="text-box centered" autocomplete="current-password" placeholder="Enter Password" type="password" value={{this.password}} {{on "change" this.updatePassword}}>
+    </div>
+  </body>
+  <footer class="login footer form-footer fadeIn-Animation">
+    <div>
+      <button class="button centered login-button-size" type="submit">Login</button>
+      <button {{on 'click' this.forgotPassword}} class="button centered login-button-size" type="button"> Forgot Password</button>
+      <button {{on 'click' this.signUp}} class="button centered login-button-size" type="button">Sign Up</button>
+      <LinkTo @route='authenticated.dogs'class='nav-bar-links'>Dogs</LinkTo>
+
+
+    </div>
+  </footer>
+  <footer>
+    <LinkTo @route='info' class="info-link">More information</LinkTo>
+  </footer>
+</form>
