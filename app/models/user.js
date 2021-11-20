@@ -8,7 +8,7 @@ export default class UserModel extends Model {
   @attr email;
 
 
-  @belongsTo('owner', { inverse: 'user' }) owner;  // 1-1
+  // @belongsTo('owner', { inverse: 'user' }) owner;  // 1-1
 
 
 }

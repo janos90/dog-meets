@@ -7,13 +7,12 @@ export default class ApplicationAdapter extends JSONAPIAdapter {
   //
   headers = {
     'Content-Type': 'application/json',
-    'Accept': 'application/json'
-
-    // 'Access-Control-Allow-Origin': '*'
+    'Accept': 'application/json',
+    'Access-Control-Allow-Origin': '*',
     // secret_token: this.session.data.authenticated.token
   }
   namespace = 'api';
-  host = 'http://localhost:8000';
+  host = 'https://dog-meets-api.herokuapp.com';
 
 
 

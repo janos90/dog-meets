@@ -5,29 +5,26 @@ import { tracked } from "@glimmer/tracking";
 import $ from 'jquery';
 
 export default class LoginController extends Controller {
-  @tracked errorMessage;
   @service session;
-  fadeOut(timer){
-    $(".text-box").fadeOut(timer);
-    $(".button").fadeOut(timer);
-  }
+
+  @tracked error;
+  @tracked username;
+  @tracked password;
 
   @action
   async authenticate(e) {
     e.preventDefault();
     let { identification, password } = this;
     const credentials = {username:identification, password:password}
-
     try {
-      await this.session.authenticate('authenticator:jwt', credentials);
+      await this.session.authenticate('authenticator:token', credentials);
     } catch(error) {
       console.log('error', error);
       alert('Incorrect Username or Password')
     }
 
     if (this.session.isAuthenticated) {
-      this.fadeOut();
-      this.transitionToRoute('authenticated.opportunities');
+      this.transitionToRoute('authenticated');
     }
   }
 
